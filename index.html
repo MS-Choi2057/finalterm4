@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>젊은 베르테르의 슬픔</title>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbit&family=Song+Myung&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Orbit', sans-serif;
+            background-color: #000;
+            color: #fff;
+            overflow-x: hidden;
+            word-break: keep-all;
+        }
+
+        .header-section {
+            position: relative;
+            height: 400px;
+            background: linear-gradient(45deg, #1a1a1a, #333);
+        }
+
+        .meme-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            height: 100%;
+            gap: 0;
+        }
+
+        .meme-item {
+            position: relative;
+            overflow: hidden;
+            background: #222;
+        }
+
+        .meme-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 1;
+            background-repeat: no-repeat;
+        }
+
+        .meme-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 2;
+        }
+
+        .meme-text {
+            font-size: 24px;
+            font-weight: 900;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            margin: 5px 0;
+        }
+
+        .red-banner {
+            background: linear-gradient(135deg, #ff0000, #cc0000);
+            height: 60px;
+            display: flex;
+            align-items: center;
+            padding: 0;
+            box-shadow: 0 4px 8px rgba(255,0,0,0.3);
+            overflow: hidden;
+            position: relative;
+        }   
+
+        .scroll-container {
+            display: flex;
+            white-space: nowrap;
+            animation: scroll 50s linear infinite;
+        }
+
+        .scroll-text {
+            display: flex;
+            justify-content: space-between;
+            min-width: 100%;
+            padding: 0 20px;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .banner-text {
+            font-size: 24px;
+            font-weight: 400;
+            letter-spacing: 2px;
+        }
+
+        .korean-text {
+            font-size: 24px;
+            font-weight: 400;
+        }
+
+        .content-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            padding: 60px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .content-column h2 {
+            font-size: 30px;
+            font-weight: 400;
+            margin-bottom: 30px;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        .content-column p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #ccc;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .tweet-mockup {
+            background: #15202b;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #38444d;
+        }
+
+        .tweet-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .tweet-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #1da1f2;
+            margin-right: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+        }
+
+        .tweet-info {
+            flex-grow: 1;
+        }
+
+        .tweet-username {
+            font-weight: bold;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .tweet-handle {
+            color: #8899a6;
+            font-size: 12px;
+        }
+
+        .tweet-content {
+            color: #fff;
+            font-size: 14px;
+            line-height: 1.4;
+            margin-bottom: 15px;
+        }
+
+        .tweet-stats {
+            display: flex;
+            gap: 20px;
+            color: #8899a6;
+            font-size: 12px;
+        }
+
+        .mansion-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .highlight {
+            color: #ff0000;
+            font-weight: 400;
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 5px #ff0000; }
+            50% { text-shadow: 0 0 20px #ff0000, 0 0 30px #ff0000; }
+            100% { text-shadow: 0 0 5px #ff0000; }
+        }
+
+        .banner-text {
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        .circle-button {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ff0000, #cc0000);
+            border: none;
+            cursor: url(cursor.cur) auto;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            box-shadow: 0 2px 10px rgba(255, 0, 0, 0.3);
+        }
+
+        .circle-button a {
+            text-align: center; text-decoration: none; color: white;
+        }
+
+        .circle-button a:hover {
+            text-align: center; text-decoration: none; color: #ff0000;
+        }
+
+        .circle-button:hover {
+            background: #ffffff;
+            color: #ff0000;
+            transform: translateY(-50%) scale(1.2);
+            box-shadow: 10px 10px 10px rgba(255, 0, 0, 0.5);
+        }
+
+        .circle-button.left {
+            left: -80px;
+        }
+
+        .circle-button.right {
+            right: -80px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-section">
+        <div class="meme-grid">
+            <div class="meme-item">
+                <div style="background: url(gif4.gif); height: 100%; display: flex; align-items: center; justify-content: center;background-size: cover;">
+                    <div class="meme-overlay">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="meme-item">
+                <div style="background: url(meme5.jpg); height: 100%; position: relative; background-size: cover;">
+                    <div class="meme-overlay">
+
+                    </div>
+                </div>
+            </div>
+            <div class="meme-item">
+                <div style="background: url(meme6.jpg); height: 100%; position: relative; background-size: cover;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="red-banner">
+        <div class="scroll-container">
+            <div class="scroll-text">
+                <div class="banner-text"> The Sorrows of Young Werther &nbsp;&nbsp; 젊은 베르테르의 슬픔 &nbsp;&nbsp; The Sorrows of Young Werther &nbsp;&nbsp; 젊은 베르테르의 슬픔 &nbsp;&nbsp; The Sorrows of Young Werther &nbsp;&nbsp; 젊은 베르테르의 슬픔 &nbsp;&nbsp; The Sorrows of Young Werther &nbsp;&nbsp; 젊은 베르테르의 슬픔 &nbsp;&nbsp; The Sorrows of Young Werther &nbsp;&nbsp; 젊은 베르테르의 슬픔 &nbsp;&nbsp; The Sorrows of Young Werther &nbsp;&nbsp; 젊은 베르테르의 슬픔 </div>
+            </div>  
+        </div>
+    </div>
+
+    <div class="content-section">
+        <div class="content-column">
+            <h2>Definition</h2>
+            <p>1774년 출간된 요한 볼프강 폰 괴테의 소설 '젊은 베르테르의 슬픔'은 출간 즉시 유럽 전역에 엄청난 파장을 일으켰습니다. 이루어질 수 없는 사랑에 괴로워하다 결국 스스로 목숨을 끊는 젊은 예술가 베르테르의 이야기는 '베르테르 열풍(Werther-Fieber)'이라는 사회 현상까지 만들어냈습니다. <span class="highlight"> 베르테르처럼 노란 조끼와 파란 연미복을 입고 다니는가 하면, 소설의 내용을 모방하여 스스로 목숨을 끊는 사건이 잇따라 발생했습니다.</span></p>
+
+           
+        </div>
+
+        <div class="content-column">
+            <h2>Episode</h2>
+            <p>이러한 모방 자살 현상에 심각성을 느낀 각국의 정부와 종교계, 특히 가톨릭교회는 자살을 대죄로 여기는 교리에 따라, 해당 소설이 자살을 미화하고 조장하며 기성세대의 도덕과 종교적 가치를 훼손한다고 보았습니다. <span class="highlight">이에 여러 도시와 국가에서 이 책을 금서로 지정하거나 판매를 금지하는 조치를 취했으나,</span> 책을 읽지 못하게 하려는 시도는 오히려 사람들의 호기심을 더욱 자극했고, 금지된 책이라는 사실 자체가 매력을 더해 비밀리에 책을 구해 읽는 이들이 늘어났습니다. </p>
+        </div>
+
+        <a href="https://ms-choi2057.github.io/finalterm3/"><button class="circle-button left">◀</button></a>
+        <a href="https://ms-choi2057.github.io/finalterm5/"><button class="circle-button right">▶</button></a>
+    </div>
+</body>
+</html>
