@@ -421,6 +421,33 @@ filter: brightness(0.5);
     left: 50%;
     transform: translateX(-50%);
 }
+
+.footer {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.9));
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 10px;
+    position: relative;
+    z-index: 997;  /* Lower than buttons and gradient */
+    padding-bottom: 80px;  /* Space for buttons */
+}
+
+.footer p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #999;
+}
+
+.footer a {
+    color: #ff0000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #ffffff;
+}
     </style>
 
     </style>
@@ -491,13 +518,19 @@ filter: brightness(0.5);
 
         <div class="content-section" style="padding-top: 050px;">
         <div class="content-column">
-            <p>『젊은 베르테르의 슬픔』의 금서 조치는 책의 유통과 영향을 막기는커녕, 오히려 더 많은 사람들에게 읽히고 사회적 파장을 키우는 역효과를 낳았습니다. 이는 금서 조치가 정보나 사상의 확산을 막기보다는, 오히려 대중의 호기심과 관심을 자극해 그 영향력을 확대시킬 수 있음을 보여주는 대표적 사례입니다.</p>
+            <p>『젊은 베르테르의 슬픔』의 금서 조치는 책의 유통과 영향을 막기기는커녕, 오히려 더 많은 사람들에게 읽히고 사회적 파장을 키우는 역효과를 낳았습니다. 이는 금서 조치가 정보나 사상의 확산을 막기보다는, 오히려 대중의 호기심과 관심을 자극해 그 영향력을 확대시킬 수 있음을 보여주는 대표적 사례입니다.</p>
 
         </div>
     
         <a href="https://ms-choi2057.github.io/finalterm3/"><button class="circle-button left">◀</button></a>
         <a href="https://ms-choi2057.github.io/finalterm5/"><button class="circle-button right">▶</button></a>
     </div>
+    <!-- Place before bottom-gradient -->
+    <footer class="footer">
+        <p>© 2025 Streisand Effect Project</p>
+        <p>Made with ❤️ by <a href="https://www.instagram.com/post_designerseok/">Minseok Choi</a></p>
+        <p>Contact: alstjr2057@naver.com</p>
+    </footer>
     <div class="bottom-gradient"></div>
 </body>
 </html>
